@@ -13,12 +13,14 @@ Backend Service is written in Node.js. It is used to track the NFTs, transaction
 npm install
 ```
 2. Enter Api Key in config/.env
-```
+
 3. Run the server
 ```
 npm run server
 ```
-4. Open server in browser at http://localhost:3000
+4. Open server in browser at
+```
+http://localhost:3000
 ```
 
 ## API
