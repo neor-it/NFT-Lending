@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transactions</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+<body>
+    <%- include('./modules/header') %>
+
+    <h1>Transactions</h1>
+    <% if (data && data.length > 0) { %>
+        <div class="transactions-container">
+            <% data.forEach((transaction) => { %>
+                <div class="transaction-card">
+                    <div class="transaction-details">
+                        <div class="transaction-title">
+                            <h2><%= transaction.hash %></h2>
+                        </div>
+                        <div class="transaction-info">
+                            <p>Nonce: <%= transaction.nonce %></p>
+                            <p>From: <%= transaction.from_address %></p>
+                            <p>To: <%= transaction.to_address %></p>
+                            <p>Value: <%= transaction.value %></p>
+                            <p>Gas: <%= transaction.gas %></p>
+                            <p>Gas Price: <%= transaction.gas_price %></p>
+                            <p>Input: <%= transaction.input %></p>
+                            <p>Receipt Cumulative Gas Used: <%= transaction.receipt_cumulative_gas_used %></p>
+                            <p>Receipt Gas Used: <%= transaction.receipt_gas_used %></p>
+                            <p>Receipt Status: <%= transaction.receipt_status %></p>
+                            <p>Block Timestamp: <%= transaction.block_timestamp %></p>
+                            <p>Block Number: <%= transaction.block_number %></p>
+                            <p>Block Hash: <%= transaction.block_hash %></p>
+                            <p>Transfer Index: <%= transaction.transfer_index %></p>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <p>No transactions available.</p>
+    <% } %>
+
+</body>
+</html>

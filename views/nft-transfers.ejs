@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transactions</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+<body>
+    <%- include('./modules/header') %>
+
+    <h1>NFT Transfers</h1>
+    <% if (data && data.length > 0) { %>
+        <div class="transactions-container">
+            <% data.forEach((nftTransfer) => { %>
+                <div class="transaction-card">
+                    <div class="transaction-details">
+                        <div class="transaction-title">
+                            <h2><%= nftTransfer.transaction_hash %></h2>
+                        </div>
+                        <div class="transaction-info">
+                            <p>Block Number: <%= nftTransfer.block_number %></p>
+                            <p>Block Timestamp: <%= nftTransfer.block_timestamp %></p>
+                            <p>Block Hash: <%= nftTransfer.block_hash %></p>
+                            <p>Transaction Index: <%= nftTransfer.transaction_index %></p>
+                            <p>Log Index: <%= nftTransfer.log_index %></p>
+                            <p>Value: <%= nftTransfer.value %></p>
+                            <p>Contract Type: <%= nftTransfer.contract_type %></p>
+                            <p>Transaction Type: <%= nftTransfer.transaction_type %></p>
+                            <p>Token Address: <%= nftTransfer.token_address %></p>
+                            <p>Token ID: <%= nftTransfer.token_id %></p>
+                            <p>From Address: <%= nftTransfer.from_address %></p>
+                            <p>To Address: <%= nftTransfer.to_address %></p>
+                            <p>Amount: <%= nftTransfer.amount %></p>
+                            <p>Verified: <%= nftTransfer.verified %></p>
+                            <p>Possible Spam: <%= nftTransfer.possible_spam %></p>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <p>No transactions available.</p>
+    <% } %>
+
+</body>
+</html>
