@@ -11,9 +11,8 @@ Backend Service is written in Node.js. It is used to track the NFTs, transaction
 ## How to run
 1. Install dependencies
 ```
-npm install moralis
+npm install moralis express @moralisweb3/common-evm-utils
 npm install dotenv
-npm install express
 npm install ejs
 ```
 2. Enter Api Key in config/.env
