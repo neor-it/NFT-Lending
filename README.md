@@ -28,3 +28,13 @@ http://localhost:3000
 
 ## API
 1. moralis.io - a scalable Web3 backend provider that solves all the problems associated with appearing in Web3.
+
+## Smart Contract Functions
+setFee - a function for setting the fee for using NFTs.
+getNFTs - a function that returns a list of registered NFTs.
+registerNFT - a private function for adding a new NFT to the list of registered ones.
+purposeNFT - a function for offering an NFT for rent to another user at a specified price and for a certain period of time.
+purchaseNFT - a function for sending an NFT to a user after they have paid the rental fee.
+cancelPurposeNFT - a function for cancelling an NFT rental offer and returning it to the owner.
+returnNFT - function for returning the NFT to the owner and sending funds to the temporary owner.
+withdrawAll - a function for withdrawing funds from the NFT to the owner.
