@@ -33,8 +33,6 @@ async function getAllNFTs() {
     return nfts;
 }
 
-console.log(getAllNFTs());
-
 // getNFTsByCollection() - Get all NFTs owned by the user, grouped by collection
 async function getNFTsByCollection() {
     let nfts = await getAllNFTs();
