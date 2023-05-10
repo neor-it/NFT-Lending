@@ -5,7 +5,7 @@ const express = require("express");
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
 const API_KEY = process.env.API_KEY;
-const address = "0xA3DE3a58680606EDcba006a3b32a2a6448076aE2"
+const address = "0x06Ca494E8a389AcA5aAC2b4BEd876315dC72c10F"
 
 const abi = require("./abi.json");
 const chain = EvmChain.SEPOLIA;
@@ -27,11 +27,13 @@ async function getAllNFTs() {
       abi,
       chain,
     });
-
-    const nfts = response.toJSON().map(([addr, tokenId, contractAddr, value, available]) => ({ addr, tokenId, contractAddr, value, available }));
+    
+    const nfts = response.toJSON().map(([owner, newOwner, tokenId, nftContract, nftValue, useTime, timestamp, isAvailable]) => ({ owner, newOwner, tokenId, nftContract, nftValue, useTime, timestamp, isAvailable }));
 
     return nfts;
 }
+
+console.log(getAllNFTs());
 
 // getNFTsByCollection() - Get all NFTs owned by the user, grouped by collection
 async function getNFTsByCollection() {
@@ -41,18 +43,19 @@ async function getNFTsByCollection() {
         return [];
     }
 
-    const availableNFTs = nfts.filter(nft => nft.available);
+    const availableNFTs = nfts.filter(nft => nft.isAvailable);
 
     const nftPromises = availableNFTs.map(async nft => {
         const response = await Moralis.EvmApi.nft.getNFTMetadata({
             "chain": chain,
-            "address": nft.contractAddr,
+            "address": nft.nftContract,
             "tokenId": nft.tokenId,
             "mediaItems": true
         });
 
-        response.jsonResponse.available = nft.available;
-        response.jsonResponse.value = nft.value;
+        response.jsonResponse.available = nft.isAvailable;
+        response.jsonResponse.value = nft.nftValue;
+        response.jsonResponse.useTime = nft.useTime;
         return response;
     });
 

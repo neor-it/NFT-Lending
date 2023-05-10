@@ -31,6 +31,7 @@
                             <p>Available: <% if (nft.jsonResponse.available) { %>  
                                 NFT is available for purchase
                                 <% } else { %>NFT isn't available for purchase <% } %></p>
+                                <p> Use time: <%= nft.jsonResponse.useTime %> seconds</p>
                         </div>
                     </div>
                 </div>
