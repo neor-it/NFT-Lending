@@ -27,7 +27,7 @@ http://localhost:3000
 ```
 
 ## API
-1. <a href="moralis.io" target="_blank">moralis.io</a> - a scalable Web3 backend provider that solves all the problems associated with appearing in Web3.
+1. <a href="https://moralis.io/" target="_blank">moralis.io</a> - a scalable Web3 backend provider that solves all the problems associated with appearing in Web3.
 
 ## Smart Contract Functions
 <p/> setFee - a function for setting the fee for using NFTs.
