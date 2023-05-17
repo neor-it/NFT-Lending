@@ -3,7 +3,9 @@ NFT Lending Protocol with Backend Service
 
 # Smart Contract
 Smart Contract is located in the contracts folder and is written in Solidity. It is compiled using Remix IDE and deploy to the Sepolia Testnet.
-https://sepolia.etherscan.io/address/0x06ca494e8a389aca5aac2b4bed876315dc72c10f
+Lending Protocol Contract: https://sepolia.etherscan.io/address/0x45765f1ca42ca73865248865f4cb0d2645cebc5f
+
+FakeUSDT Contract: https://sepolia.etherscan.io/address/0x45942dd3a289bf7c088b8ebe2c61465437616cad
 
 # Backend Service
 Backend Service is written in Node.js. It is used to track the NFTs, transactions and NFT Transfers.
