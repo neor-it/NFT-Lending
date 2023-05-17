@@ -9,36 +9,48 @@
     <%- include('./modules/header') %>
     
     <h1>NFTs</h1>
-    <% if (data && data.length > 0) { %>
-        <div class="nfts-container">
-            <% data.forEach((nft) => { %>
-                <div class="nft-card">
-                    <div class="nft-image">
+<% if (data && data.length > 0) { %>
+    <div class="nfts-container">
+        <% data.forEach((nft) => { %>
+            <div class="nft-card">
+                <div class="nft-image">
+                    <% if (nft.jsonResponse.metadata && JSON.parse(nft.jsonResponse.metadata).image) { %>
                         <img src="<%= JSON.parse(nft.jsonResponse.metadata).image.replace('ipfs://', 'https://ipfs.moralis.io:2053/ipfs/') %>" alt="NFT Image">
+                    <% } else { %>
+                        <p>No image available</p>
+                    <% } %>
+                </div>
+                <div class="nft-details">
+                    <div class="nft-title">
+                        <h2><%= nft.jsonResponse.name %></h2>
+                        <h3><%= nft.jsonResponse.symbol %></h3>
                     </div>
-                    <div class="nft-details">
-                        <div class="nft-title">
-                            <h2><%= nft.jsonResponse.name %></h2>
-                            <h3><%= nft.jsonResponse.symbol %></h3>
-                        </div>
-                        <div class="nft-info">
-                            <p>Token Address: <%= nft.jsonResponse.token_address %></p>
-                            <p>Token ID: <%= nft.jsonResponse.token_id %></p>
-                            <p>Owner: <%= nft.jsonResponse.owner_of %></p>
-                            <p>Token URI: <a href="<%= nft.jsonResponse.token_uri %>"><%= nft.jsonResponse.token_uri %></a></p>
-                            <p>Metadata: <%= nft.jsonResponse.metadata %></p>
-                            <p>Value: <%= nft.jsonResponse.value %></p>
-                            <p>Available: <% if (nft.jsonResponse.available) { %>  
-                                NFT is available for purchase
-                                <% } else { %>NFT isn't available for purchase <% } %></p>
-                                <p> Use time: <%= nft.jsonResponse.useTime %> seconds</p>
-                        </div>
+                    <div class="nft-info">
+                        <p>Token Address: <%= nft.jsonResponse.token_address %></p>
+                        <p>Token ID: <%= nft.jsonResponse.token_id %></p>
+                        <p>Owner: <%= nft.jsonResponse.owner_of %></p>
+                        <p>Token URI: <a href="<%= nft.jsonResponse.token_uri %>"><%= nft.jsonResponse.token_uri %></a></p>
+                        <p>Metadata: <%= nft.jsonResponse.metadata %></p>
+                        <!--Check if value == 0 output usdt value-->
+                        <% if (nft.jsonResponse.value == 0) { %>
+                            <p>Value: <%= nft.jsonResponse.usdtValue %> USDT</p>
+                        <% } else { %>
+                            <p>Value: <%= nft.jsonResponse.value %> WEI</p>
+                        <% } %>
+                        <p>Available: <% if (nft.jsonResponse.available) { %>
+                            NFT is available for purchase
+                        <% } else { %>
+                            NFT isn't available for purchase
+                        <% } %></p>
+                        <p> Use time: <%= nft.jsonResponse.useTime %> seconds</p>
                     </div>
                 </div>
-            <% }); %>
-        </div>
-    <% } else { %>
-        <p>No NFTs available for purchase.</p>
-    <% } %>
+            </div>
+        <% }); %>
+    </div>
+<% } else { %>
+    <p>No NFTs available for purchase.</p>
+<% } %>
+
 </body>
 </html>
