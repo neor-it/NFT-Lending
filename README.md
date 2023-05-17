@@ -30,7 +30,7 @@ http://localhost:3000
 1. <a href="https://moralis.io/" target="_blank">moralis.io</a> - a scalable Web3 backend provider that solves all the problems associated with appearing in Web3.
 
 ## Smart Contract Functions
-# NFTLending
+### NFTLending
 <p/> setFee - a function for setting the fee for using NFTs.
 <p/> getNFTs - a function that returns a list of registered NFTs.
 <p/> registerNFT - a private function for adding a new NFT to the list of registered ones.
@@ -39,7 +39,7 @@ http://localhost:3000
 <p/> cancelPurposeNFT - a function for cancelling an NFT rental offer and returning it to the owner.
 <p/> returnNFT - function for returning the NFT to the owner and sending funds to the temporary owner.
 <p/> withdrawAll - a function for withdrawing funds from the NFT to the owner.
-# FakeUSDT
+### FakeUSDT
 <p/> transfer - a function for transferring funds from one user to another.
 <p/> balanceOf - a function for checking the balance of a user.
 <p/> approve - a function for approving the transfer of funds from one user to another.
