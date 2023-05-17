@@ -39,6 +39,7 @@ http://localhost:3000
 <p/> cancelPurposeNFT - a function for cancelling an NFT rental offer and returning it to the owner.
 <p/> returnNFT - function for returning the NFT to the owner and sending funds to the temporary owner.
 <p/> withdrawAll - a function for withdrawing funds from the NFT to the owner.
+
 ### FakeUSDT
 <p/> transfer - a function for transferring funds from one user to another.
 <p/> balanceOf - a function for checking the balance of a user.
