@@ -37,6 +37,7 @@ http://localhost:3000
 <p/> setFee - a function for setting the fee for using NFTs.
 <p/> getNFTs - a function that returns a list of registered NFTs.
 <p/> registerNFT - a private function for adding a new NFT to the list of registered ones.
+<p/> deleteNFT - a function for deleting an NFT from the list of registered ones.
 <p/> purposeNFT/purposeNFTWithUSDT - a function for offering an NFT for rent to another user at a specified price and for a certain period of time.
 <p/> purchaseNFT/purchaseNFTWithUSDT - a function for sending an NFT to a user after they have paid the rental fee.
 <p/> cancelPurposeNFT - a function for cancelling an NFT rental offer and returning it to the owner.
