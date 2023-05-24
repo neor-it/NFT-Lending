@@ -88,6 +88,7 @@ async function handleRoute(req, res, getData, viewName) {
     try {
         const data = await getData();
         res.render(viewName, { data });
+        console.log(data);
     } catch(err) {
         console.error(err);
         res.status(500).send('Internal Server Error');
