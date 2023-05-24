@@ -50,3 +50,12 @@ http://localhost:3000
 <p/> approve - a function for approving the transfer of funds from one user to another.
 <p/> transferFrom - a function for transferring funds from one user to another after approval.
 <p/> allowance - a function for checking the amount of funds approved for transfer.
+
+
+### Docker
+```
+docker pull ghcr.io/neor-it/nft-lending:latest
+```
+```
+docker run -e API_KEY=YOUR_API_KEY -d -p 3000:3000 --name nftlending --rm  ghcr.io/neor-it/nft-lending
+```
