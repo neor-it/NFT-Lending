@@ -1,0 +1,19 @@
+name: Create and publish a Docker image
+
+on: push
+
+env:
+    REGISTRY: ghcr.io
+    IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Build and push Docker image
+              uses: docker/build-push-action@v2
+              with:
+                push: true
+                context: .
+                tags: ${{ steps.tag.outputs.tag }}
+                labels: ${{ steps.meta.outputs.labels }}
