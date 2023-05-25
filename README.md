@@ -53,9 +53,12 @@ http://localhost:3000
 
 
 ### Docker
+## Start with Docker
+Pull the image:
 ```
 docker pull ghcr.io/neor-it/nft-lending:latest
 ```
+Run the container and set the API_KEY environment variable:
 ```
 docker run -e API_KEY=YOUR_API_KEY -d -p 3000:3000 --name nftlending --rm  ghcr.io/neor-it/nft-lending
 ```
