@@ -18,7 +18,7 @@ npm install moralis express @moralisweb3/common-evm-utils
 npm install dotenv
 npm install ejs
 ```
-2. Enter Api Key in config/.env
+2. Enter Moralis Api Key in config/.env
 
 3. Run the server
 ```
@@ -27,6 +27,16 @@ npm run server
 4. Open server in browser at
 ```
 http://localhost:3000
+```
+
+## Start with Docker
+Pull the image:
+```
+docker pull ghcr.io/neor-it/nft-lending:latest
+```
+Run the container and set the API_KEY environment variable:
+```
+docker run -e API_KEY=YOUR_API_KEY -d -p 3000:3000 --name nftlending --rm  ghcr.io/neor-it/nft-lending
 ```
 
 ## API
@@ -50,15 +60,3 @@ http://localhost:3000
 <p/> approve - a function for approving the transfer of funds from one user to another.
 <p/> transferFrom - a function for transferring funds from one user to another after approval.
 <p/> allowance - a function for checking the amount of funds approved for transfer.
-
-
-### Docker
-## Start with Docker
-Pull the image:
-```
-docker pull ghcr.io/neor-it/nft-lending:latest
-```
-Run the container and set the API_KEY environment variable:
-```
-docker run -e API_KEY=YOUR_API_KEY -d -p 3000:3000 --name nftlending --rm  ghcr.io/neor-it/nft-lending
-```
